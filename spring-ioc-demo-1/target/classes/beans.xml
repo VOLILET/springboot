@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance "
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="ExBeanService" class="com.spring.service.ExBeanService">
+		<property name="name" value="world"></property>
+		<property name="age" value="111"></property>
+		<constructor-arg type="String" value="aaa"></constructor-arg>
+		<constructor-arg type="int" value="0000"></constructor-arg>
+	</bean>
+	<bean id="exampleBean" class="com.spring.bean.ExampleBean">
+		<constructor-arg>
+			<ref bean="anotherbean" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="yetanotherbean" />
+		</constructor-arg>
+		<constructor-arg type="int" value="3"></constructor-arg>
+		<property name="yetbean" ref="yetanotherbean"></property>
+		<property name="anotherbean" ref="anotherbean"></property>
+		<property name="i" value="1"></property>
+	</bean>
+	<bean id="lBean" class="com.spring.bean.Bean" init-method="start"
+		destroy-method="stop" />
+
+	<bean id="aBean" class="com.spring.bean.ABean" />
+
+
+	<bean id="Exbean" class="springDemoBean.Exbean"></bean>
+</beans>

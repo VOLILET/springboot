@@ -1,0 +1,17 @@
+name: Phil
+server:
+  port: 8090
+hello: GoogBye
+spring: 
+    profiles: 
+      active: generic
+---
+spring: 
+   profiles: Good Evening,dev
+name: Everyone
+
+
+---
+spring:
+  profiles: hello
+name: David

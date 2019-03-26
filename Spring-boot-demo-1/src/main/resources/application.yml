@@ -1,0 +1,24 @@
+my:
+  name: Jack
+  age: 22
+  number: ${random.int[100,999]}
+  uuid: ${random.uuid}
+  max: ${random.int(10)}
+  value: ${random.value}
+  
+  management: 
+    security:
+      enable: false
+      #port: 8888  ##管理端口
+    #context: /abc
+ 
+ 
+#    security: 
+#      user:
+#        name: admin
+#        password: admin
+#        
+
+    
+  
+  

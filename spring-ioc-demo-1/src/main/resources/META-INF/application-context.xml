@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- default-init-method="init" default-destroy-method="cleanup" -->
+
+	<bean id="onebean" class="com.spring.bean.OneBean">
+		<property name="age" value="12"></property>
+		<property name="name" value="aa"></property>
+		<constructor-arg type="String" value="bb"></constructor-arg>
+		<constructor-arg type="int" value="13"></constructor-arg>
+	</bean>
+
+	<bean id="examplebean" class="com.spring.bean.ExampleBean">
+		<constructor-arg>
+			<ref bean="anotherbean" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="yetanotherbean" />
+		</constructor-arg> 
+		<constructor-arg type="int" value="3"></constructor-arg> 
+		<!-- <property name="beanTwo" ref="yetanotherbean"></property>
+		<property name="beanOne" ref="anotherbean"></property>
+		<property name="i" value="111"></property> -->
+	</bean>
+	<bean id="anotherbean" class="com.spring.bean.AnotherBean">
+		<property name="anotherBean" value="anotherBean"></property>
+	</bean>
+	<bean id="yetanotherbean" class="com.spring.bean.YetAnotherBean">
+		<property name="yetAnotherBean" value="yetanotherBean"></property>
+	</bean>
+	
+</beans>
+        
